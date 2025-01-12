@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:utils="clr-namespace:MathModelSimulator.Application.Utils"
         xmlns:viewModels="clr-namespace:MathModelSimulator.Application.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MathModelSimulator.Application.Views.MainWindow"
@@ -14,7 +15,21 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <viewModels:MainWindowViewModel/>
     </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="{Binding Path=[FileMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                <MenuItem Header="{Binding Path=[SettingsMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}" Command="{Binding UpdateLanguageCommand}"/>
+                <Separator/>
+                <MenuItem Header="{Binding Path=[ExitMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}" Command="{Binding CloseCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{Binding Path=[HelpMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                <MenuItem Header="{Binding Path=[AboutMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}"/>
+            </MenuItem>
+        </Menu>
+        
+        <Grid x:Name="OuterGrid">
+            <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </DockPanel>
 </Window>

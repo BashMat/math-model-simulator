@@ -1,9 +1,15 @@
+#region Usings
+
+using System.Globalization;
 using System.Linq;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using MathModelSimulator.Application.Utils;
 using MathModelSimulator.Application.ViewModels;
 using MainWindow = MathModelSimulator.Application.Views.MainWindow;
+
+#endregion
 
 namespace MathModelSimulator.Application;
 
@@ -16,6 +22,7 @@ public partial class App : Avalonia.Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        LocalizationProvider.Instance.CurrentCulture = CultureInfo.CurrentCulture;
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
@@ -25,6 +32,10 @@ public partial class App : Avalonia.Application
                                  {
                                      DataContext = new MainWindowViewModel(),
                                  };
+            if (desktop.MainWindow.DataContext is ICloseable closeable)
+            {
+                closeable.Close += (sender, eventArgs) => desktop.MainWindow.Close();
+            }
         }
 
         base.OnFrameworkInitializationCompleted();
