@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace MathModelSumilator.Views;
+namespace MathModelSimulator.Application.Views;
 
 public partial class MainWindow : Window
 {

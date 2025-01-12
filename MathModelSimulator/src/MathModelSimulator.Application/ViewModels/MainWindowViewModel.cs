@@ -1,4 +1,4 @@
-﻿namespace MathModelSimulator.ViewModels;
+﻿namespace MathModelSimulator.Application.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {

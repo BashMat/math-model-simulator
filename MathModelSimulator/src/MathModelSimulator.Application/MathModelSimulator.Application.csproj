@@ -6,7 +6,7 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-        <RootNamespace>MathModelSimulator</RootNamespace>
+        <RootNamespace>MathModelSimulator.Application</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

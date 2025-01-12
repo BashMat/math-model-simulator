@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace MathModelSimulator.ViewModels;
+namespace MathModelSimulator.Application.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {

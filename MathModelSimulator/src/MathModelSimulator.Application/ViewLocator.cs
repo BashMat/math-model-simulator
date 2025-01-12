@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using MathModelSimulator.ViewModels;
+using MathModelSimulator.Application.ViewModels;
 
-namespace MathModelSimulator;
+namespace MathModelSimulator.Application;
 
 public class ViewLocator : IDataTemplate
 {

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathModelSimulator", "src\MathModelSimulator\MathModelSimulator.csproj", "{B7FE29B2-DDC8-4753-8EC6-71EEB54FD62F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathModelSimulator.Application", "src\MathModelSimulator.Application\MathModelSimulator.Application.csproj", "{B7FE29B2-DDC8-4753-8EC6-71EEB54FD62F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

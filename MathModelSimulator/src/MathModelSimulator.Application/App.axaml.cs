@@ -1,15 +1,13 @@
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
-using Avalonia.Data.Core.Plugins;
 using System.Linq;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using MathModelSimulator.ViewModels;
-using MathModelSumilator.Views;
+using MathModelSimulator.Application.ViewModels;
+using MainWindow = MathModelSimulator.Application.Views.MainWindow;
 
-namespace MathModelSimulator;
+namespace MathModelSimulator.Application;
 
-public partial class App : Application
+public partial class App : Avalonia.Application
 {
     public override void Initialize()
     {
