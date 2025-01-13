@@ -17,7 +17,8 @@
     </Design.DataContext>
     
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
+        <Menu DockPanel.Dock="Top"
+              Background="SlateGray">
             <MenuItem Header="{Binding Path=[FileMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
                 <MenuItem Header="{Binding Path=[SettingsMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}" Command="{Binding UpdateLanguageCommand}"/>
                 <Separator/>
@@ -28,8 +29,47 @@
             </MenuItem>
         </Menu>
         
-        <Grid x:Name="OuterGrid">
-            <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+        <SplitView IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   DisplayMode="CompactInline"
+                   Background="SlateGray"
+                   PaneBackground="SlateGray">
+            <SplitView.Pane>
+                <StackPanel Orientation="Vertical"
+                            Spacing="5"
+                            Margin="5">
+                    <Grid x:Name="SideBarHeaderGrid" 
+                          RowDefinitions="Auto"
+                          HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Grid.Column="0"
+                                   IsVisible="{Binding IsPaneOpen}"
+                                   Text="BashMat's MathModelSimulator"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                        </TextBlock>
+                        <Button Grid.Column="1"
+                                Command="{Binding OpenClosePaneCommand}" >
+                            <PathIcon Data="{StaticResource LineHorizontal3Regular}"></PathIcon>
+                        </Button>
+                    </Grid>
+                    <ListBox>
+                        <ListBoxItem>Debug</ListBoxItem>
+                        <ListBoxItem>Debug</ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Border CornerRadius="12 0 0 12"
+                        Background="White">
+                    <Grid x:Name="OuterGrid">
+                        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </SplitView.Content>
+        </SplitView>
     </DockPanel>
 </Window>

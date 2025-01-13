@@ -18,11 +18,26 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
     
     public ICommand UpdateLanguageCommand { get; }
     public ICommand CloseCommand { get; }
+    public ICommand OpenClosePaneCommand { get; }
+    
+    private bool _isPaneOpen;
+    
+    public bool IsPaneOpen
+    {
+        get => _isPaneOpen;
+        set => SetProperty(ref _isPaneOpen, value);
+    }
 
     public MainWindowViewModel()
     {
         UpdateLanguageCommand = new RelayCommand(OnUpdateLanguageCommandExecuted);
         CloseCommand = new RelayCommand(OnCloseCommandExecuted);
+        OpenClosePaneCommand = new RelayCommand(OnOpenClosePaneCommandExecuted);
+    }
+
+    private void OnOpenClosePaneCommandExecuted()
+    {
+        IsPaneOpen = !IsPaneOpen;
     }
 
     private void OnUpdateLanguageCommandExecuted()
