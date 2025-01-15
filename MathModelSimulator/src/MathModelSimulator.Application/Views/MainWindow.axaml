@@ -9,12 +9,6 @@
         x:DataType="viewModels:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="MathModelSimulator">
-
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <viewModels:MainWindowViewModel/>
-    </Design.DataContext>
     
     <DockPanel>
         <Menu DockPanel.Dock="Top"
@@ -66,7 +60,7 @@
                 <Border CornerRadius="12 0 0 12"
                         Background="White">
                     <Grid x:Name="OuterGrid">
-                        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TransitioningContentControl Content="{Binding CurrentPageViewModel}"/>
                     </Grid>
                 </Border>
             </SplitView.Content>

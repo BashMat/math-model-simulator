@@ -1,4 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿#region Usings
+
+using CommunityToolkit.Mvvm.ComponentModel;
+
+#endregion
 
 namespace MathModelSimulator.Application.ViewModels;
 

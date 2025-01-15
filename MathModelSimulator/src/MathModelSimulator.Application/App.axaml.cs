@@ -1,12 +1,17 @@
 #region Usings
 
+using System;
 using System.Globalization;
 using System.Linq;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using MathModelSimulator.Application.Configuration;
+using MathModelSimulator.Application.Extensions;
 using MathModelSimulator.Application.Utils;
 using MathModelSimulator.Application.ViewModels;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using MainWindow = MathModelSimulator.Application.Views.MainWindow;
 
 #endregion
@@ -23,14 +28,30 @@ public partial class App : Avalonia.Application
     public override void OnFrameworkInitializationCompleted()
     {
         LocalizationProvider.Instance.CurrentCulture = CultureInfo.CurrentCulture;
+
+        var services = new ServiceCollection();
+        
+        IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                                                          .AddJsonFile($"appsettings{Environment.GetEnvironmentVariable("ENVIRONMENT")}.json", optional: true, reloadOnChange: true)
+                                                          .AddUserSecrets<Program>()
+                                                          .AddEnvironmentVariables()
+                                                          .Build();
+        
+        services.Configure<AppSettingsOptions>(config.GetSection("AppSettings"));
+        
+        services.RegisterServices();
+        
+        ServiceProvider serviceProvider = services.BuildServiceProvider();
+        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
+            
             desktop.MainWindow = new MainWindow
                                  {
-                                     DataContext = new MainWindowViewModel(),
+                                     DataContext = serviceProvider.GetRequiredService<MainWindowViewModel>(),
                                  };
             if (desktop.MainWindow.DataContext is ICloseable closeable)
             {

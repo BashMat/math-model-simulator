@@ -28,8 +28,17 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
         set => SetProperty(ref _isPaneOpen, value);
     }
 
-    public MainWindowViewModel()
+    private IPageViewModel _currentPageViewModel;
+
+    public IPageViewModel CurrentPageViewModel
     {
+        get => _currentPageViewModel;
+        set => SetProperty(ref _currentPageViewModel, value);
+    }
+
+    public MainWindowViewModel(IPageViewModel defaultPageViewModel)
+    {
+        _currentPageViewModel = defaultPageViewModel;
         UpdateLanguageCommand = new RelayCommand(OnUpdateLanguageCommandExecuted);
         CloseCommand = new RelayCommand(OnCloseCommandExecuted);
         OpenClosePaneCommand = new RelayCommand(OnOpenClosePaneCommandExecuted);

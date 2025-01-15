@@ -6,9 +6,9 @@ using Avalonia.Controls;
 
 namespace MathModelSimulator.Application.Views;
 
-public partial class MainWindow : Window
+public partial class HomePageView : UserControl
 {
-    public MainWindow()
+    public HomePageView()
     {
         InitializeComponent();
     }

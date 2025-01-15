@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:MathModelSimulator.Application.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MathModelSimulator.Application.Views.HomePageView"
+             x:DataType="viewModels:HomePageViewModel">
+    
+    <UserControl.Styles>
+        <Style Selector="Button.Transparent">
+            <Setter Property="Background" Value="Transparent" />
+
+            <Style Selector="^:pointerover /template/ ContentPresenter">
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+            
+            <Style Selector="^:pressed /template/ ContentPresenter">
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+        </Style>
+    </UserControl.Styles>
+    
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top"
+                   HorizontalAlignment="Center"
+                   Text="Home Page"/>
+        <Button Classes="Transparent"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Command="{Binding RedirectToSourceCodeCommand}">
+            <PathIcon Data="{StaticResource CodeRegular}"
+                      Width="200"
+                      Height="200"
+                      Opacity="0.5"/>
+        </Button>
+    </DockPanel>
+</UserControl>
