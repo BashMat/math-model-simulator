@@ -21,11 +21,23 @@
     <data name="FileMenuItemHeader" xml:space="preserve">
         <value>_File</value>
     </data>
+    <data name="ExitMenuItemHeader" xml:space="preserve">
+        <value>_Exit</value>
+    </data>
     <data name="SettingsMenuItemHeader" xml:space="preserve">
         <value>_Settings</value>
     </data>
-    <data name="ExitMenuItemHeader" xml:space="preserve">
-        <value>_Exit</value>
+    <data name="ViewMenuItemHeader" xml:space="preserve">
+        <value>_View</value>
+    </data>
+    <data name="HomePageMenuItemHeader" xml:space="preserve">
+        <value>_Home</value>
+    </data>
+    <data name="LearnPageMenuItemHeader" xml:space="preserve">
+        <value>_Learn</value>
+    </data>
+    <data name="ModelPageMenuItemHeader" xml:space="preserve">
+        <value>_Model</value>
     </data>
     <data name="HelpMenuItemHeader" xml:space="preserve">
         <value>_Help</value>

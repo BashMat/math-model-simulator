@@ -38,6 +38,7 @@
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>MainWindowsResources.Designer.cs</LastGenOutput>
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <DependentUpon>MainWindow.axaml</DependentUpon>
       </EmbeddedResource>
       <EmbeddedResource Update="Views\MainWindowResources.ru.resx">
         <DependentUpon>MainWindowResources.resx</DependentUpon>

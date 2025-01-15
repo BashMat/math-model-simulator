@@ -18,7 +18,26 @@
                 <Separator/>
                 <MenuItem Header="{Binding Path=[ExitMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}" Command="{Binding CloseCommand}"/>
             </MenuItem>
+            <MenuItem Header="{Binding Path=[ViewMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                <MenuItem Header="{Binding Path=[HomePageMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                    <MenuItem.Icon>
+                        <PathIcon Data="{StaticResource HomeRegular}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{Binding Path=[LearnPageMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                    <MenuItem.Icon>
+                        <PathIcon Data="{StaticResource HatGraduationRegular}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{Binding Path=[ModelPageMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                    <MenuItem.Icon>
+                        <PathIcon Data="{StaticResource MathFormulaRegular}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="{Binding Path=[HelpMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}">
+                <MenuItem Header="{Binding Path=[HelpMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}"/>
+                <Separator/>
                 <MenuItem Header="{Binding Path=[AboutMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}"/>
             </MenuItem>
         </Menu>
