@@ -65,13 +65,24 @@
                                    HorizontalAlignment="Center">
                         </TextBlock>
                         <Button Grid.Column="1"
+                                x:Name="PaneButton"
                                 Command="{Binding OpenClosePaneCommand}" >
-                            <PathIcon Data="{StaticResource LineHorizontal3Regular}"></PathIcon>
+                            <PathIcon Data="{StaticResource LineHorizontal3Regular}"/>
                         </Button>
                     </Grid>
-                    <ListBox>
-                        <ListBoxItem>Debug</ListBoxItem>
-                        <ListBoxItem>Debug</ListBoxItem>
+                    <ListBox x:Name="SideBarMenuList"
+                             ItemsSource="{Binding Pages}"
+                             SelectedItem="{Binding SelectedPage}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type viewModels:PageViewModel}">
+                                <StackPanel Spacing="10"
+                                            Orientation="Horizontal">
+                                    <PathIcon Data="{Binding Icon}"/>
+                                    <TextBlock Text="{Binding Title}" 
+                                               IsVisible="{Binding #SideBarMenuList.((viewModels:MainWindowViewModel)DataContext).IsPaneOpen}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
                     </ListBox>
                 </StackPanel>
             </SplitView.Pane>
@@ -79,7 +90,7 @@
                 <Border CornerRadius="12 0 0 12"
                         Background="White">
                     <Grid x:Name="OuterGrid">
-                        <TransitioningContentControl Content="{Binding CurrentPageViewModel}"/>
+                        <TransitioningContentControl Content="{Binding SelectedPage}"/>
                     </Grid>
                 </Border>
             </SplitView.Content>

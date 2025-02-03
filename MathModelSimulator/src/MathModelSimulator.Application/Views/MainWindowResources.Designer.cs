@@ -28,7 +28,7 @@ namespace MathModelSimulator.Application.Views {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MainWindowResources() {
+        public MainWindowResources() {
         }
         
         /// <summary>
@@ -96,11 +96,74 @@ namespace MathModelSimulator.Application.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Home.
+        /// </summary>
+        public static string HomePageMenuItemHeader {
+            get {
+                return ResourceManager.GetString("HomePageMenuItemHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string HomePageTitle {
+            get {
+                return ResourceManager.GetString("HomePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Learn.
+        /// </summary>
+        public static string LearnPageMenuItemHeader {
+            get {
+                return ResourceManager.GetString("LearnPageMenuItemHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn.
+        /// </summary>
+        public static string LearnPageTitle {
+            get {
+                return ResourceManager.GetString("LearnPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Model.
+        /// </summary>
+        public static string ModelPageMenuItemHeader {
+            get {
+                return ResourceManager.GetString("ModelPageMenuItemHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model.
+        /// </summary>
+        public static string ModelPageTitle {
+            get {
+                return ResourceManager.GetString("ModelPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Settings.
         /// </summary>
         public static string SettingsMenuItemHeader {
             get {
                 return ResourceManager.GetString("SettingsMenuItemHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _View.
+        /// </summary>
+        public static string ViewMenuItemHeader {
+            get {
+                return ResourceManager.GetString("ViewMenuItemHeader", resourceCulture);
             }
         }
     }

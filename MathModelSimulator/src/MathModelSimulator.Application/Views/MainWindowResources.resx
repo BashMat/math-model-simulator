@@ -45,4 +45,13 @@
     <data name="AboutMenuItemHeader" xml:space="preserve">
         <value>_About</value>
     </data>
+    <data name="HomePageTitle" xml:space="preserve">
+        <value>Home</value>
+    </data>
+    <data name="ModelPageTitle" xml:space="preserve">
+        <value>Model</value>
+    </data>
+    <data name="LearnPageTitle" xml:space="preserve">
+        <value>Learn</value>
+    </data>
 </root>

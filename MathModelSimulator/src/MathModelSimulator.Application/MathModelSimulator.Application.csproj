@@ -55,6 +55,10 @@
         <DesignTime>True</DesignTime>
         <DependentUpon>HomePageView.axaml</DependentUpon>
       </Compile>
+      <Compile Update="Views\ModelPageView.axaml.cs">
+        <DesignTime>True</DesignTime>
+        <DependentUpon>ModelPageView.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

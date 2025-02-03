@@ -38,4 +38,13 @@
     <data name="AboutMenuItemHeader" xml:space="preserve">
         <value>_О программе</value>
     </data>
+    <data name="HomePageTitle" xml:space="preserve">
+        <value>Главная</value>
+    </data>
+    <data name="ModelPageTitle" xml:space="preserve">
+        <value>Моделировать</value>
+    </data>
+    <data name="LearnPageTitle" xml:space="preserve">
+        <value>Изучить</value>
+    </data>
 </root>
