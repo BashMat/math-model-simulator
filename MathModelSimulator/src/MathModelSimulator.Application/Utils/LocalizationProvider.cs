@@ -13,28 +13,25 @@ public class LocalizationProvider : INotifyPropertyChanged
 {
     private static readonly LocalizationProvider instance = new ();
 
-    public static LocalizationProvider Instance
-    {
-        get { return instance; }
-    }
+    public static LocalizationProvider Instance => instance;
 
     // TODO: Remove dependency, make assignable from View.
-    private readonly ResourceManager resManager = MainWindowResources.ResourceManager;
-    private CultureInfo currentCulture = null;
+    private readonly ResourceManager _resManager = MainWindowResources.ResourceManager;
+    private CultureInfo _currentCulture = CultureInfo.CurrentCulture;
 
-    public string? this[string key] => this.resManager.GetString(key, this.currentCulture);
+    public string? this[string key] => _resManager.GetString(key, _currentCulture);
 
     public CultureInfo CurrentCulture
     {
-        get => currentCulture;
+        get => _currentCulture;
         set
         {
-            if (Equals(currentCulture, value))
+            if (Equals(_currentCulture, value))
             {
                 return;
             }
             
-            currentCulture = value;
+            _currentCulture = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
         }
     }

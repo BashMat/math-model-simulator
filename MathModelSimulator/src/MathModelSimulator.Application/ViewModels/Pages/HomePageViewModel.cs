@@ -1,13 +1,14 @@
 ﻿#region Usings
 
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Input;
 using Avalonia.Controls;
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.Input;
 using MathModelSimulator.Application.Configuration;
-using MathModelSimulator.Application.Views;
+using MathModelSimulator.Application.Utils;
 using Microsoft.Extensions.Options;
 
 #endregion
@@ -21,7 +22,8 @@ public class HomePageViewModel : PageViewModel, IHomePageViewModel
 
     public HomePageViewModel(IOptionsMonitor<AppSettingsOptions> options)
     {
-        Title = MainWindowResources.HomePageTitle;
+        LocalizationProvider.Instance.PropertyChanged += UpdateTitle;
+        Title = GetPageTitle();
         if (Avalonia.Application.Current!.TryFindResource("HomeRegular", out var icon))
         {
             Icon = (StreamGeometry)icon!;
@@ -33,6 +35,13 @@ public class HomePageViewModel : PageViewModel, IHomePageViewModel
         
         _appSettingsOptions = options;
         RedirectToSourceCodeCommand = new RelayCommand(OnRedirectToSourceCodeCommandExecuted);
+    }
+
+    public override string PageName => "Home";
+
+    private void UpdateTitle(object? sender, PropertyChangedEventArgs e)
+    {
+        Title = GetPageTitle();
     }
 
     private void OnRedirectToSourceCodeCommandExecuted()
