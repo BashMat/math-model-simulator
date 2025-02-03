@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:utils="clr-namespace:MathModelSimulator.Application.Utils"
         xmlns:viewModels="clr-namespace:MathModelSimulator.Application.ViewModels"
+        xmlns:pages="clr-namespace:MathModelSimulator.Application.ViewModels.Pages"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MathModelSimulator.Application.Views.MainWindow"
         x:DataType="viewModels:MainWindowViewModel"
@@ -74,7 +75,7 @@
                              ItemsSource="{Binding Pages}"
                              SelectedItem="{Binding SelectedPage}">
                         <ListBox.ItemTemplate>
-                            <DataTemplate DataType="{x:Type viewModels:PageViewModel}">
+                            <DataTemplate DataType="{x:Type pages:PageViewModel}">
                                 <StackPanel Spacing="10"
                                             Orientation="Horizontal">
                                     <PathIcon Data="{Binding Icon}"/>

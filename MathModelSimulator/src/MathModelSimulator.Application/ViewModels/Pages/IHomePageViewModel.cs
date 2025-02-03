@@ -1,4 +1,4 @@
-﻿namespace MathModelSimulator.Application.ViewModels;
+﻿namespace MathModelSimulator.Application.ViewModels.Pages;
 
 public interface IHomePageViewModel : IPageViewModel
 {

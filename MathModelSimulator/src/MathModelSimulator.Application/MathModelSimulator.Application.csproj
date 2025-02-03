@@ -51,13 +51,15 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>MainWindowResources.resx</DependentUpon>
       </Compile>
-      <Compile Update="Views\HomePageView.axaml.cs">
+      <Compile Update="Views\Pages\HomePageView.axaml.cs">
         <DesignTime>True</DesignTime>
         <DependentUpon>HomePageView.axaml</DependentUpon>
+        <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Views\ModelPageView.axaml.cs">
+      <Compile Update="Views\Pages\ModelPageView.axaml.cs">
         <DesignTime>True</DesignTime>
         <DependentUpon>ModelPageView.axaml</DependentUpon>
+        <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
 

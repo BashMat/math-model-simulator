@@ -1,6 +1,6 @@
 ﻿using Avalonia.Media;
 
-namespace MathModelSimulator.Application.ViewModels;
+namespace MathModelSimulator.Application.ViewModels.Pages;
 
 public interface IPageViewModel
 {

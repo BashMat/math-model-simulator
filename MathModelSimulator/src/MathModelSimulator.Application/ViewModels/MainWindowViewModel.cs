@@ -9,6 +9,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MathModelSimulator.Application.Configuration;
 using MathModelSimulator.Application.Utils;
+using MathModelSimulator.Application.ViewModels.Pages;
 using MathModelSimulator.Application.Views;
 using Microsoft.Extensions.Options;
 

@@ -3,16 +3,16 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Input;
+using Avalonia.Controls;
+using Avalonia.Media;
 using CommunityToolkit.Mvvm.Input;
 using MathModelSimulator.Application.Configuration;
 using MathModelSimulator.Application.Views;
 using Microsoft.Extensions.Options;
-using Avalonia.Controls;
-using Avalonia.Media;
 
 #endregion
 
-namespace MathModelSimulator.Application.ViewModels;
+namespace MathModelSimulator.Application.ViewModels.Pages;
 
 public class HomePageViewModel : PageViewModel, IHomePageViewModel
 {

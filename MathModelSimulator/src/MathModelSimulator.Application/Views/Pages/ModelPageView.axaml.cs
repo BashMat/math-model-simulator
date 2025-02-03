@@ -4,7 +4,7 @@ using Avalonia.Controls;
 
 #endregion
 
-namespace MathModelSimulator.Application.Views;
+namespace MathModelSimulator.Application.Views.Pages;
 
 public partial class ModelPageView : UserControl
 {

@@ -1,6 +1,7 @@
 ﻿#region Usings
 
 using MathModelSimulator.Application.ViewModels;
+using MathModelSimulator.Application.ViewModels.Pages;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion

@@ -1,12 +1,12 @@
 ﻿#region Usings
 
-using MathModelSimulator.Application.Views;
 using Avalonia.Controls;
 using Avalonia.Media;
+using MathModelSimulator.Application.Views;
 
 #endregion
 
-namespace MathModelSimulator.Application.ViewModels;
+namespace MathModelSimulator.Application.ViewModels.Pages;
 
 public class ModelPageViewModel : PageViewModel
 {
