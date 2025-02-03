@@ -3,15 +3,35 @@
              x:Class="MathModelSimulator.Application.App"
              xmlns:local="using:MathModelSimulator"
              xmlns:application="clr-namespace:MathModelSimulator.Application"
-             RequestedThemeVariant="Default">
+             xmlns:utils="clr-namespace:MathModelSimulator.Application.Utils"
+             xmlns:viewModels="clr-namespace:MathModelSimulator.Application.ViewModels"
+             RequestedThemeVariant="Default"
+             x:DataType="viewModels:AppViewModel">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <application:ViewLocator/>
     </Application.DataTemplates>
+             
+     <Application.DataContext>
+         <viewModels:AppViewModel />
+     </Application.DataContext>
   
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="/Assets/Icons.axaml"></StyleInclude>
     </Application.Styles>
+             
+     <TrayIcon.Icons>
+         <TrayIcons>
+             <TrayIcon Icon="/Assets/fx.ico" 
+                       ToolTipText="MathModelSimulator">
+                 <TrayIcon.Menu>
+                     <NativeMenu>
+                         <NativeMenuItem Header="{Binding Path=[ExitMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}" Command="{Binding CloseCommand}"/>
+                     </NativeMenu>
+                 </TrayIcon.Menu>
+             </TrayIcon>
+         </TrayIcons>
+     </TrayIcon.Icons>
 </Application>
