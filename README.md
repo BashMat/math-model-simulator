@@ -14,3 +14,8 @@ Project created using:
 - \MathModelSimulator – main directory
     - \src – directory for actual app code
         - \MathModelSimulator.Application – core project, includes startup file, views and view models
+
+# Copyright
+
+This project uses:
+- Application icon is a part of [Fx icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/fx)
