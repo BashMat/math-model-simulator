@@ -65,13 +65,13 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
         //                                                    ? CultureInfo.CurrentCulture 
         //                                                    : new CultureInfo(cultureCode);
 
-        CultureInfo cultureInfoToBeUsed = new CultureInfo("ru-RU");
-        if (Equals(LocalizationProvider.Instance.CurrentCulture, cultureInfoToBeUsed))
+        var cultureInfoToBeUsed = new CultureInfo("ru-RU");
+        if (Equals(LocalizationManager.Instance.CurrentCulture, cultureInfoToBeUsed))
         {
             cultureInfoToBeUsed = new CultureInfo("en");
         }
 
-        LocalizationProvider.Instance.CurrentCulture = cultureInfoToBeUsed;
+        LocalizationManager.Instance.CurrentCulture = cultureInfoToBeUsed;
     }
 
     private void OnCloseCommandExecuted()

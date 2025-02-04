@@ -19,6 +19,6 @@ public abstract partial class PageViewModel : ViewModelBase, IPageViewModel
     public virtual string PageName => string.Empty;
     public string GetPageTitle()
     {
-        return LocalizationProvider.Instance[$"{PageName}PageTitle"]!;
+        return LocalizationManager.Instance[$"{PageName}PageTitle"]!;
     }
 }

@@ -22,7 +22,7 @@ public class HomePageViewModel : PageViewModel, IHomePageViewModel
 
     public HomePageViewModel(IOptionsMonitor<AppSettingsOptions> options)
     {
-        LocalizationProvider.Instance.PropertyChanged += UpdateTitle;
+        LocalizationManager.Instance.PropertyChanged += UpdateTitle;
         Title = GetPageTitle();
         if (Avalonia.Application.Current!.TryFindResource("HomeRegular", out var icon))
         {

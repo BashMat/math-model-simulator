@@ -18,7 +18,7 @@ public partial class ModelPageViewModel : PageViewModel
 {
     public ModelPageViewModel()
     {
-        LocalizationProvider.Instance.PropertyChanged += UpdateTitle;
+        LocalizationManager.Instance.PropertyChanged += UpdateTitle;
         Title = GetPageTitle();
         PlotTitle = Title;
         if (Avalonia.Application.Current!.TryFindResource("MathFormulaRegular", out var icon))

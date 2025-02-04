@@ -27,7 +27,7 @@ public partial class App : Avalonia.Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        LocalizationProvider.Instance.CurrentCulture = CultureInfo.CurrentCulture;
+        LocalizationManager.Instance.CurrentCulture = CultureInfo.CurrentCulture;
 
         var services = new ServiceCollection();
         

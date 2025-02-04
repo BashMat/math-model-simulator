@@ -31,7 +31,7 @@
                        ToolTipText="MathModelSimulator">
                  <TrayIcon.Menu>
                      <NativeMenu>
-                         <NativeMenuItem Header="{Binding Path=[ExitMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationProvider.Instance}}" Command="{Binding CloseCommand}"/>
+                         <NativeMenuItem Header="{Binding Path=[ExitMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationManager.Instance}}" Command="{Binding CloseCommand}"/>
                      </NativeMenu>
                  </TrayIcon.Menu>
              </TrayIcon>
