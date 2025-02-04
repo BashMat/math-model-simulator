@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pages="clr-namespace:MathModelSimulator.Application.ViewModels.Pages"
+             xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MathModelSimulator.Application.Views.Pages.ModelPageView"
              x:DataType="pages:ModelPageViewModel">
@@ -11,5 +12,66 @@
         <TextBlock DockPanel.Dock="Top"
                    HorizontalAlignment="Center"
                    Text="Model Page"/>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Column="1"
+                       Grid.Row="2"
+                       Text="Slope: " />
+            <TextBox Grid.Column="3"
+                           Grid.Row="2"
+                           Text="{Binding Slope, StringFormat={}0.0000}" 
+                           Width="100"/>
+            <Slider Grid.Column="1"
+                    Grid.Row="4"
+                    Minimum="-100"
+                    Maximum="100" 
+                    Value="{Binding Slope}" 
+                    SmallChange="0.2"/>
+            <TextBlock Grid.Column="1"
+                       Grid.Row="6"
+                       Text="Initial value: " />
+            <TextBox Grid.Column="3"
+                     Grid.Row="6"
+                     Text="{Binding InitialValue, StringFormat={}0.0000}" 
+                     Width="100"/>
+            <Slider Grid.Column="1"
+                    Grid.Row="8"
+                    Minimum="-100"
+                    Maximum="100" 
+                    Value="{Binding InitialValue}"
+                    SmallChange="0.2"/>
+            
+            <oxy:PlotView Grid.Column="7"
+                          Grid.Row="1"
+                          Grid.RowSpan="9"
+                          Model="{Binding PlotModel}"/>
+
+        </Grid>
     </DockPanel>
 </UserControl>
