@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:utils="clr-namespace:MathModelSimulator.Application.Utils"
+        xmlns:viewModels="clr-namespace:MathModelSimulator.Application.ViewModels"
+        xmlns:pages="clr-namespace:MathModelSimulator.Application.ViewModels.Pages"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
+        x:Class="MathModelSimulator.Application.Views.AboutDialogView"
+        x:DataType="viewModels:AboutDialogViewModel"
+        MinWidth="450" MinHeight="200"
+        Width="450" Height="200"
+        Icon="/Assets/fx.ico"
+        Title="About MathModelSimulator">
+    
+    <DockPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <!-- Program Title and version -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+                <!-- Program Description -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+                <!-- Program Developer -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+                <!-- Program Developer Site-->
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <!-- Labels -->
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <!-- Content Description -->
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Program Title and Version:"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="3"
+                       Text="MathModelSimulator v0.1.0-alpha"/>
+        
+            <TextBlock Grid.Row="3"
+                       Grid.Column="1"
+                       Text="Program Description:"/>
+            <TextBlock Grid.Row="3"
+                       Grid.Column="3"
+                       Text="Own desktop application project for learning about math models."
+                       TextWrapping="Wrap"/>
+        
+            <TextBlock Grid.Row="5"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="3"
+                       HorizontalAlignment="Center"
+                       Text="Developed by Matvey Bashlykov (BashMat) at 2025 for coursework on subject 'Continuous Math Models'"
+                       TextWrapping="Wrap"/>
+            
+            <Button Grid.Row="7"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Command="{Binding RedirectToSourceCodeCommand}"
+                    Content="Go to Developer Site"
+                    HorizontalAlignment="Center"/>
+        </Grid>
+    </DockPanel>
+</Window>

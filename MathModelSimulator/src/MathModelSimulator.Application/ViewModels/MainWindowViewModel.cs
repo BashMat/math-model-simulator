@@ -24,12 +24,15 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
         UpdateLanguageCommand = new RelayCommand(OnUpdateLanguageCommandExecuted);
         CloseCommand = new RelayCommand(OnCloseCommandExecuted);
         OpenClosePaneCommand = new RelayCommand(OnOpenClosePaneCommandExecuted);
+        ShowAboutCommand = new RelayCommand(OnShowAboutCommandExecuted);
 
         Pages = new ObservableCollection<IPageViewModel>();
         Pages.Add(new HomePageViewModel(options));
         Pages.Add(new ModelPageViewModel());
         
         SelectedPage = Pages.First(vm => vm.Title == MainWindowResources.HomePageTitle);
+
+        _aboutDialog = new AboutDialogView(options);
     }
 
     public ObservableCollection<IPageViewModel> Pages { get; }
@@ -41,12 +44,15 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
     {
         CurrentPage = value;
     }
+    
+    public ICommand CloseCommand { get; }
 
     public event EventHandler? Close;
     
-    public ICommand UpdateLanguageCommand { get; }
-    public ICommand CloseCommand { get; }
-    public ICommand OpenClosePaneCommand { get; }
+    private void OnCloseCommandExecuted()
+    {
+        Close?.Invoke(null, EventArgs.Empty);
+    }
     
     [ObservableProperty]
     private bool _isPaneOpen;
@@ -54,10 +60,14 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
     [ObservableProperty]
     private IPageViewModel _currentPage;
 
+    public ICommand OpenClosePaneCommand { get; }
+    
     private void OnOpenClosePaneCommandExecuted()
     {
         IsPaneOpen = !IsPaneOpen;
     }
+    
+    public ICommand UpdateLanguageCommand { get; }
 
     private void OnUpdateLanguageCommandExecuted()
     {
@@ -74,8 +84,11 @@ public partial class MainWindowViewModel : ViewModelBase, ICloseable
         LocalizationManager.Instance.CurrentCulture = cultureInfoToBeUsed;
     }
 
-    private void OnCloseCommandExecuted()
+    private AboutDialogView _aboutDialog;
+    public ICommand ShowAboutCommand { get; init; }
+    
+    private void OnShowAboutCommandExecuted()
     {
-        Close?.Invoke(null, EventArgs.Empty);
+        _aboutDialog.Show();
     }
 }

@@ -61,6 +61,10 @@
         <DependentUpon>ModelPageView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="Views\AboutDialogView.axaml.cs">
+        <SubType>Code</SubType>
+        <DependentUpon>AboutDialogView.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -71,5 +75,9 @@
       <None Update="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\AboutDialog.axaml" />
     </ItemGroup>
 </Project>

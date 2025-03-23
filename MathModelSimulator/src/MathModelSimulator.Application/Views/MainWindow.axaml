@@ -39,7 +39,7 @@
             <MenuItem Header="{Binding Path=[HelpMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationManager.Instance}}">
                 <MenuItem Header="{Binding Path=[HelpMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationManager.Instance}}"/>
                 <Separator/>
-                <MenuItem Header="{Binding Path=[AboutMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationManager.Instance}}"/>
+                <MenuItem Header="{Binding Path=[AboutMenuItemHeader], Mode=OneWay, Source={x:Static utils:LocalizationManager.Instance}}" Command="{Binding ShowAboutCommand}"/>
             </MenuItem>
         </Menu>
         
