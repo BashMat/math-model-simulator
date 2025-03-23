@@ -1,7 +1,6 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="MathModelSimulator.Application.App"
-             xmlns:local="using:MathModelSimulator"
              xmlns:application="clr-namespace:MathModelSimulator.Application"
              xmlns:utils="clr-namespace:MathModelSimulator.Application.Utils"
              xmlns:viewModels="clr-namespace:MathModelSimulator.Application.ViewModels"
