@@ -1,14 +1,10 @@
 ﻿#region Usings
 
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Input;
-using Avalonia.Controls;
-using Avalonia.Media;
 using CommunityToolkit.Mvvm.Input;
 using MathModelSimulator.Application.Configuration;
-using MathModelSimulator.Application.Utils;
 using Microsoft.Extensions.Options;
 
 #endregion

@@ -1,11 +1,7 @@
 ﻿#region Usings
 
-using System.ComponentModel;
 using System.Linq;
-using Avalonia.Controls;
-using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
-using MathModelSimulator.Application.Utils;
 using MathModelSimulator.Domain;
 using OxyPlot;
 using OxyPlot.Axes;

@@ -1,10 +1,4 @@
-﻿#region Usings
-
-using System.Collections.Generic;
-
-#endregion
-
-namespace MathModelSimulator.Domain;
+﻿namespace MathModelSimulator.Domain;
 
 public class LinearFunction
 {
