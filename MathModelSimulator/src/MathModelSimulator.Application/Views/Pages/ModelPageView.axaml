@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="5"/>
@@ -49,6 +49,7 @@
                            Width="100"/>
             <Slider Grid.Column="1"
                     Grid.Row="4"
+                    Grid.ColumnSpan="3"
                     Minimum="-100"
                     Maximum="100" 
                     Value="{Binding Slope}" 
@@ -62,12 +63,14 @@
                      Width="100"/>
             <Slider Grid.Column="1"
                     Grid.Row="8"
+                    Grid.ColumnSpan="3"
                     Minimum="-100"
                     Maximum="100" 
                     Value="{Binding InitialValue}"
                     SmallChange="0.2"/>
             
-            <oxy:PlotView Grid.Column="7"
+            <oxy:PlotView x:Name="PlotView"
+                          Grid.Column="7"
                           Grid.Row="1"
                           Grid.RowSpan="9"
                           Model="{Binding PlotModel}"/>
